@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.tile {
+    width: 16px;
+    height: 16px;
+    border: 1px dotted grey;
+}
+
+.row {
+    display: flex;
+}
