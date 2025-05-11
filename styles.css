@@ -1,16 +1,21 @@
 .container {
     display: flex;
     flex-direction: column;
+
+    width: 640px;
+    height: 640px;
 }
 
 .tile {
-    width: 16px;
-    height: 16px;
-    border: 1px dotted grey;
+    border: 1px dotted rgb(207, 207, 207);
+
+    display: flex;
+    flex-grow: 1;
 }
 
 .row {
     display: flex;
+    flex-grow: 1;
 }
 
 .hover {
