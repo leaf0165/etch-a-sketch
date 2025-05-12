@@ -11,6 +11,7 @@
 
     display: flex;
     flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .row {

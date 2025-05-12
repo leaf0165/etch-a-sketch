@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+let opacityTable = []
 
 function resizeGrid(size) {
     clearGrid();
@@ -6,10 +7,19 @@ function resizeGrid(size) {
     for (let i = 0; i < size; i++) {
         const row = document.createElement("div");
         row.setAttribute("class", "row");
+        opacityTable[i] = [];
     
         for (let j = 0; j < size; j++) {
             tile = document.createElement("div");
             tile.setAttribute("class", "tile");
+            opacityTable[i][j] = 0;
+
+            tile.addEventListener("click", (e) => {
+                opacityTable[i][j] += 0.1;
+                const opacity = opacityTable[i][j];
+                e.currentTarget.style.backgroundColor = "rgba(0, 0, 0, " + opacity + ")";
+            });
+
             row.appendChild(tile);
         }
     
@@ -23,6 +33,8 @@ function clearGrid() {
     while (container.firstChild) {
         container.removeChild(container.lastChild);
     }
+
+    opacityTable = []
 }
 
 function setTileHover() {
@@ -34,7 +46,7 @@ function setTileHover() {
 
         tile.addEventListener("mouseleave", () => {
             tile.classList.toggle("hover");
-        })
+        });
     });
 }
 
