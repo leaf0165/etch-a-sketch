@@ -67,5 +67,10 @@ resizeGridButton.addEventListener("click", () => {
     resizeGrid(size);
 });
 
+const clearGridButton = document.querySelector(".clear-grid");
+clearGridButton.addEventListener("click", () => {
+    resizeGrid(opacityTable.length);
+})
+
 //start page with a 16x16 grid
 resizeGrid(16);
